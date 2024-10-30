@@ -1,0 +1,7 @@
+{
+  "name": "votachain",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
