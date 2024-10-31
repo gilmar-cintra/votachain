@@ -1,10 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Home</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <Head name="Home" />
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
@@ -20,10 +16,11 @@
 <script setup lang="ts">
 import {
   IonPage,
-  IonHeader,
   IonToolbar,
   IonTitle,
   IonContent,
+  IonHeader,
 } from "@ionic/vue";
 import ExploreContainer from "@/components/ExploreContainer.vue";
+import Head from "@/components/Head.vue";
 </script>
