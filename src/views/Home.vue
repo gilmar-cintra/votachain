@@ -7,8 +7,14 @@
           <ion-title size="large">Home</ion-title>
         </ion-toolbar>
       </ion-header>
-
-      <ExploreContainer name="Home page" />
+      <div class="ion-padding ion-text-center">
+        <span class="title">Destaques</span>
+        <br /><br />
+        <Slide :slides="slides" />
+      </div>
+      <div class="ion-padding ion-text-center">
+        <span class="title">minhas votações</span>
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -21,6 +27,31 @@ import {
   IonContent,
   IonHeader,
 } from "@ionic/vue";
-import ExploreContainer from "@/components/ExploreContainer.vue";
+
 import Head from "@/components/Head.vue";
+import Slide from "@/components/Slide.vue";
+
+const slides = [
+  {
+    image: "https://i.postimg.cc/7655MVLs/Alagamento.jpg",
+    type: "Referendos",
+    text: "Como podemos melhorar o combate a enchentes?",
+    title: "Slide 1",
+    alt: "Imagem destaque alagamento",
+  },
+  {
+    image: "https://i.postimg.cc/yN5tQmKp/escola.jpg",
+    type: "Orçamentos",
+    text: "Incluir aulas de programação nas escolas melhora a educação?",
+    title: "Slide 2",
+    alt: "Imagem escola",
+  },
+  {
+    image: "https://i.postimg.cc/VvbYZf2n/sabesp.jpg",
+    type: "Plebiscitos",
+    text: "Você concorda com a privatização da Sabesp?",
+    title: "Slide 3",
+    alt: "Imagem Sabesp",
+  },
+];
 </script>
