@@ -77,13 +77,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 /* Estilos para os botões e a paginação */
 .swiper-button-next,
 .swiper-button-prev,
 .swiper-pagination {
   color: #fff;
 }
+
 /* Estilos para a imagem do slide */
 .slide-container img {
   width: 100%;
