@@ -104,4 +104,43 @@ export default defineComponent({
   object-fit: cover;
   border-radius: 20px;
 }
+
+/* Estilos para a camada de sobreposição */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(229, 69, 198, 0.6),
+    rgba(12, 242, 180, 0.6)
+  );
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.chipType {
+  background-color: #0cf2b4;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.imageTxt {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+}
+
+.backgroundTxt {
+  background-color: rgba(150, 107, 232, 0.7);
+  width: 70%; /* Largura da div */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o texto dentro da div */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 </style>
