@@ -14,44 +14,36 @@
       </div>
       <div class="ion-padding ion-text-center">
         <span class="title">minhas votações</span>
+        <br /><br />
+        <ion-searchbar
+          v-model="searchTerm"
+          placeholder="Pesquisar..."
+        ></ion-searchbar>
+        <br />
+        <div v-for="slide in slides" :key="slide.id">
+          <VoteCard :votig="slide" v-if="slide.voted" />
+        </div>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
+import Head from "@/components/Head.vue";
+import Slide from "@/components/Slide.vue";
+import VoteCard from "@/components/VoteCard.vue";
+
 import {
   IonPage,
   IonToolbar,
   IonTitle,
   IonContent,
   IonHeader,
+  IonSearchbar,
 } from "@ionic/vue";
 
-import Head from "@/components/Head.vue";
-import Slide from "@/components/Slide.vue";
+import slidesData from "./slidesData"; // Ajuste o caminho se necessário
 
-const slides = [
-  {
-    image: "https://i.postimg.cc/7655MVLs/Alagamento.jpg",
-    type: "Referendos",
-    text: "Como podemos melhorar o combate a enchentes?",
-    title: "Slide 1",
-    alt: "Imagem destaque alagamento",
-  },
-  {
-    image: "https://i.postimg.cc/yN5tQmKp/escola.jpg",
-    type: "Orçamentos",
-    text: "Incluir aulas de programação nas escolas melhora a educação?",
-    title: "Slide 2",
-    alt: "Imagem escola",
-  },
-  {
-    image: "https://i.postimg.cc/VvbYZf2n/sabesp.jpg",
-    type: "Plebiscitos",
-    text: "Você concorda com a privatização da Sabesp?",
-    title: "Slide 3",
-    alt: "Imagem Sabesp",
-  },
-];
+const slides = slidesData;
+const searchTerm = "";
 </script>

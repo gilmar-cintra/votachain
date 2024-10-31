@@ -16,11 +16,11 @@
         <!-- Camada de sobreposição com cor linear -->
         <div class="overlay">
           <ion-chip class="chipType ion-margin-top" :outline="true">{{
-            slide.type
+            getSlideType(slide.type)
           }}</ion-chip>
           <br /><br />
           <div class="backgroundTxt">
-            <span class="imageTxt">{{ slide.text }}</span>
+            <span class="imageTxt">{{ slide.title }}</span>
           </div>
         </div>
       </div>
@@ -67,6 +67,24 @@ export default {
         },
       },
     };
+  },
+  methods: {
+    getSlideType(type) {
+      switch (type) {
+        case 1:
+          return "Reverendos";
+        case 2:
+          return "Plebiscito";
+        case 3:
+          return "Orçamento";
+        case 4:
+          return "Consultas";
+        case 5:
+          return "Iniciativas";
+        default:
+          return "Tipo Desconhecido"; // Caso o tipo não corresponda a nenhum valor
+      }
+    },
   },
   props: {
     slides: {
